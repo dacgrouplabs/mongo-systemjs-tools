@@ -1,13 +1,13 @@
 var MongoOplog = require('mongo-oplog')
-  , config = require('./config.json')
-  , log = require('simple-node-logger').createSimpleLogger();
+  , helper = require('./helpers.js')
+  , log = helper.log
+  , format = helper.format;
 
-log.setLevel('debug');
-
-var oplog = MongoOplog(config.databaseUrl);
+var oplog = MongoOplog(helper.config.databaseUrl);
 
 oplog.filter('*.system.js').on('op', function (data) {
-  log.info(data);
+  log.info(format("[%s] db: %s, func: %s", data["op"], data["ns"].replace('.system.js', ''), data["o"]["_id"]));
+  helper.write(data);
 });
 
 oplog.on('error', function (error) {

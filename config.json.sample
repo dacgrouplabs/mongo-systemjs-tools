@@ -1,3 +1,4 @@
 {
-    "databaseUrl" : "mongodb://username:password@serverip:port/database?options"
+    "databaseUrl" : "mongodb://username:password@serverip:port/database?options",
+    "outDir": "/path/to/data"
 }
