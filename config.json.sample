@@ -1,0 +1,3 @@
+{
+    "databaseUrl" : "mongodb://username:password@serverip:port/database?options"
+}

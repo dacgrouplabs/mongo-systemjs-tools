@@ -1,0 +1,17 @@
+{
+  "name": "mongo-function-monitor",
+  "version": "0.0.1",
+  "description": "Tail a MongoDB oplog for system.js function updates",
+  "main": "mongo-function-monitor.js",
+  "dependencies": {
+    "mongo-oplog": "^0.1.7",
+    "mongodb": "^2.0.28",
+    "simple-node-logger": "^0.92.21"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alex Bevilacqua",
+  "license": "MIT"
+}
