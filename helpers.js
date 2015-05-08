@@ -6,7 +6,7 @@ var exec = require('child_process').exec
   , log = require('simple-node-logger').createSimpleLogger()
   , nodegit = require('nodegit');
 
-log.setLevel('debug');
+log.setLevel(config.logLevel || 'info');
 
 module.exports = {
   log: log,
