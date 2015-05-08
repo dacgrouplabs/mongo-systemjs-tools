@@ -60,31 +60,28 @@ function checkinFile(filename) {
   })
   .then(function(indexResult) {
       index  = indexResult;
-
       // this file is in the root of the directory and doesn't need a full path
       index.addByPath(fileToStage);
-
       // this will write files to the index
       index.write();
 
       return index.writeTree();
-
-  }).then(function(oidResult) {
-
+  })
+  .then(function(oidResult) {
       oid = oidResult;
       return nodegit.Reference.nameToId(repo, "HEAD");
-
-  }).then(function(head) {
-
+  })
+  .then(function(head) {
       return repo.getCommit(head);
-
-  }).then(function(parent) {
+  })
+  .then(function(parent) {
       author = nodegit.Signature.now(
         config.gitAuthor || "MongoBot",
         config.gitAuthorEmail || "");
 
-      return repo.createCommit("HEAD", author, author, getDateTime(), oid, [parent]);
-  }).then(function(commitId) {
+      return repo.createCommit("HEAD", author, author, filename, oid, [parent]);
+  })
+  .then(function(commitId) {
       log.debug(format("GIT | committed as %s", commitId));
   });
 }
@@ -135,27 +132,4 @@ function pushToRemote() {
   .catch(function(reason) {
       log.error(format("GIT | push to remote failed: %s", reasons));
   });
-}
-
-function getDateTime() {
-    var date = new Date();
-
-    var hour = date.getHours();
-    hour = (hour < 10 ? "0" : "") + hour;
-
-    var min  = date.getMinutes();
-    min = (min < 10 ? "0" : "") + min;
-
-    var sec  = date.getSeconds();
-    sec = (sec < 10 ? "0" : "") + sec;
-
-    var year = date.getFullYear();
-
-    var month = date.getMonth() + 1;
-    month = (month < 10 ? "0" : "") + month;
-
-    var day  = date.getDate();
-    day = (day < 10 ? "0" : "") + day;
-
-    return format("%s-%s-%s %s:%s:%s", year, month, day, hour, min, sec);
 }
