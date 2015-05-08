@@ -6,6 +6,7 @@
   "dependencies": {
     "mongo-oplog": "^0.1.7",
     "mongodb": "^2.0.28",
+    "nodegit": "^0.4.0",
     "simple-node-logger": "^0.92.21"
   },
   "devDependencies": {},
