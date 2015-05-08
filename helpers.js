@@ -24,13 +24,17 @@ function writeOplogEntryToDisk(doc) {
     // output is in stdout
   });
 
-  // strip out the common namespace and convert periods to path seperators
+  // strip out the common namespace
   var db = doc.ns.replace(".system.js", "");
   var funcName = doc.o._id;
   var fn = format("%s.%s.js", db, funcName);
 
   writeFile(fn, doc.o.value.code);
-  checkinFile(fn);
+
+  if (config.gitEnabled) {
+    checkinFile(fn);
+    pushToRemote();
+  }
 }
 
 function writeFile(filename, data) {
@@ -44,7 +48,7 @@ function writeFile(filename, data) {
 }
 
 function checkinFile(filename) {
-  var repo, index, oid, remote;
+  var repo, index, oid;
 
   repoFolder = path.resolve(outDir, '.git'),
   fileToStage = filename;
@@ -75,44 +79,62 @@ function checkinFile(filename) {
       return repo.getCommit(head);
 
   }).then(function(parent) {
-      author = nodegit.Signature.now("MongoBot", "no-reply@dacgroup.com");
+      author = nodegit.Signature.now(
+        config.gitAuthor || "MongoBot",
+        config.gitAuthorEmail || "");
 
       return repo.createCommit("HEAD", author, author, getDateTime(), oid, [parent]);
   }).then(function(commitId) {
-      log.debug(format("commited as %s", commitId));
+      log.debug(format("GIT | committed as %s", commitId));
+  });
+}
+
+function pushToRemote() {
+ var repo, remote;
+
+  repoFolder = path.resolve(outDir, '.git'),
+  nodegit.Repository.open(repoFolder)
+  .then(function(repoResult) {
+      repo = repoResult;
+      return repoResult.openIndex();
   })
 
-  // /// PUSH
-  // .then(function() {
-  //     return repo.getRemote("origin");
-  // }).then(function(remoteResult) {
+  .then(function() {
+      return repo.getRemote("origin");
+  })
 
-  //   console.log('remote Loaded');
-  //   remote = remoteResult;
+  .then(function(remoteResult) {
+    log.debug('GIT | remote loaded');
+    remote = remoteResult;
 
-  //   remote.setCallbacks({
-  //       credentials: function(url, userName) {
-  //           return nodegit.Cred.sshKeyFromAgent(userName);
-  //       }
-  //   });
+    remote.setCallbacks({
+        credentials: function(url, userName) {
+            return nodegit.Cred.sshKeyFromAgent(userName);
+        }
+    });
 
-  //   console.log('remote Configured');
-  //   return remote.connect(nodegit.Enums.DIRECTION.PUSH);
+    log.debug('GIT | remote configured');
 
-  // }).then(function() {
-  //   console.log('remote Connected?', remote.connected())
+    return remote.connect(nodegit.Enums.DIRECTION.PUSH);
+  })
 
-  //   return remote.push(
-  //             ["refs/heads/master:refs/heads/master"],
-  //             null,
-  //             repo.defaultSignature(),
-  //             "Push to master")
-  // }).then(function() {
-  //     console.log('remote Pushed!')
-  // })
-  // .catch(function(reason) {
-  //     console.log(reason);
-  // });
+  .then(function() {
+    //console.log('remote Connected?', remote.connected())
+
+    return remote.push(
+              ["refs/heads/master:refs/heads/master"],
+              null,
+              repo.defaultSignature(),
+              "Push to master")
+  })
+
+  .then(function() {
+      log.debug("GIT | remote pushed.")
+  })
+
+  .catch(function(reason) {
+      log.error(format("GIT | push to remote failed: %s", reasons));
+  });
 }
 
 function getDateTime() {

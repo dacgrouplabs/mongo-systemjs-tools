@@ -9,7 +9,9 @@
 {
     "databaseUrl" : "mongodb://username:password@serverip:port/database?options",
     "outDir": "/path/to/data",
-    "logLevel": "debug"
+    "logLevel": "debug",
+    "gitAuthor": "MongoBot",
+    "gitAuthorEmail": "noreply@dacgroup.com"
 }
 ```
 
@@ -19,9 +21,15 @@
 
 **logLevel**: the debug level to set for the internal logger (defaults to *./info*).
 
+**gitEnabled**: if set to *true*, commit changes to a repository and then attempt to push those changes to the **origin** remote (defaults to *false*).
+
+**gitAuthor**: the name to use as the commit author if pushing to Git (defaults to *MongoBot*).
+
+**gitAuthorEmail**: the email address to associate with the *gitAuthor* (defaults to *./info*).
+
 ## Git Integration
 
-The `outDir` defined in the above configuration file can be Git-enabled by setting up a local repo.
+If the **gitEnabled** option is set, the **outDir** can be Git-enabled by setting up a local repo.
 
 ```
 cd /path/to/outDir
