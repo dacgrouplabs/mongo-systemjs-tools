@@ -4,6 +4,7 @@
   "description": "Tail a MongoDB oplog for system.js function updates",
   "main": "mongo-function-monitor.js",
   "dependencies": {
+    "minimist": "^1.1.1",
     "mongo-oplog": "^0.1.7",
     "mongodb": "^2.0.28",
     "nodegit": "^0.4.0",

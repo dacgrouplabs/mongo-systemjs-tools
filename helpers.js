@@ -12,7 +12,8 @@ module.exports = {
   log: log,
   config: config,
   format: format,
-  write: writeOplogEntryToDisk
+  write: writeOplogEntryToDisk,
+  writeFile: writeFile
 };
 
 const TAB_SIZE = 4;
