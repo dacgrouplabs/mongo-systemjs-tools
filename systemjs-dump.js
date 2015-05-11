@@ -1,6 +1,6 @@
 var argv = require('minimist')(process.argv.slice(2))
   , MongoClient = require('mongodb').MongoClient
-  , helper = require('./helpers.js')
+  , helper = require('./lib/helpers.js')
   , log = helper.log
   , format = helper.format
   , url = argv.url;
@@ -21,7 +21,7 @@ MongoClient.connect(url, function(err, db) {
                 db.close();
             } else {
                 coll.find({}, { sort: { "_id": 1 } }).toArray(function(err, docs) {
-                    for (var i = 0; i < 5; i++) {
+                    for (var i = 0; i < docs.length; i++) {
                         var funcName = docs[i]._id;
                         var filename = format("%s.%s.js", dbname, funcName);
                         log.debug("DUMP | writing %", filename);
