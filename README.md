@@ -53,7 +53,7 @@ cd /path/to/outDir
 git init
 ```
 
-If you would like **systemjs-monitor** to push updates to a remote server (ex: GitHub, Bitbucket), a [remote](http://git-scm.com/docs/git-remote) would need to be defined.
+If you would like **systemjs-monitor** to push updates to a remote server (ex: [GitHub](https://github.com), [Bitbucket](https://bitbucket.com)), a [remote](http://git-scm.com/docs/git-remote) would need to be defined.
 
 ```
 cd /path/to/outDir
@@ -63,8 +63,10 @@ git remote add origin <remote url>
 ## TODO
 
 - [ ] Add a lot more error handling
+- [ ] Allow Git initialization of data directory (so user doesn't have to do it manually)
 - [ ] Extract Git functionality so it can be used with *systemjs-dump* as well
 - [ ] Add hooks to allow external integration (ex: [mongo-linter](https://github.com/dacgrouplabs/mongo-linter)) 
+- [ ] Add tests!
 
 ## LICENSE
 
