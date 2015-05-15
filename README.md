@@ -2,6 +2,14 @@
 
 This package is a collection of utilities that can be used to manage the internal functions stored withing a database's `system.js` collection.
 
+**NOTE** In order to use the Git integration, you'll have to use Node.js 0.12.1 or later. If not, you'll be greeted by the following when you try to run the tools:
+
+```
+Error: /path/to/mongo-systemjs-tools/node_modules/nodegit/build/Release/nodegit.node: undefined symbol: node_module_register
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+```
+
 **Installation**
 
 First, you'll need to have [Node.js](https://nodejs.org/) installed. We recommend using [nvm](https://github.com/creationix/nvm) for this, as it greatly simplifies managing node versions.
