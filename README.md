@@ -69,6 +69,7 @@ git remote add origin <remote url>
 ## LICENSE
 
 ```
+Copyright (c) 2015, DAC Group <www.dacgroup.com>
 Copyright (c) 2015, Alex Bevilacqua <abevilacqua@dacgroup.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
