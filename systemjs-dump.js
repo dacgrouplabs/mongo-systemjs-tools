@@ -18,18 +18,20 @@ MongoClient.connect(url, function(err, db) {
             dbname = db.databaseName;
             if (err) {
                 log.error("DUMP | could not find system.js collection in this db.");
-                db.close();
             } else {
                 coll.find({}, { sort: { "_id": 1 } }).toArray(function(err, docs) {
-                    for (var i = 0; i < docs.length; i++) {
-                        var funcName = docs[i]._id;
-                        var filename = format("%s.%s.js", dbname, funcName);
-                        log.debug("DUMP | writing %", filename);
-                        helper.writeFile(filename, docs[i].value.code);
+                    if (err) {
+                        log.error("DUMP | " + err);
+                    } else {
+                        for (var i = 0; i < docs.length; i++) {
+                            var funcName = docs[i]._id;
+                            var filename = format("%s.%s.js", dbname, funcName);
+                            log.debug("DUMP | writing %", filename);
+                            helper.writeFile(filename, docs[i].value.code);
+                        }
                     }
                 });
             }
         });
-        db.close();
     }
 });
