@@ -1,5 +1,5 @@
 var MongoOplog = require('mongo-oplog')
-  , helper = require('./lib/helpers.js')
+  , helper = require('./helpers.js')
   , log = helper.log
   , format = helper.format;
 

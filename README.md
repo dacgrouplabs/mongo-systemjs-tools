@@ -2,6 +2,16 @@
 
 This package is a collection of utilities that can be used to manage the internal functions stored withing a database's `system.js` collection.
 
+**Installation**
+
+First, you'll need to have [Node.js](https://nodejs.org/) installed. We recommend using [nvm](https://github.com/creationix/nvm) for this, as it greatly simplifies managing node versions.
+
+```
+git checkout https://github.com/dacgrouplabs/mongo-systemjs-tools
+cd mongo-systemjs-tools
+npm install
+```
+
 ## systemjs-dump
 
 This utility is used to dump all *system.js* functions to file for a specific database.

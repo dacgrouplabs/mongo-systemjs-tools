@@ -1,6 +1,6 @@
 var argv = require('minimist')(process.argv.slice(2))
   , MongoClient = require('mongodb').MongoClient
-  , helper = require('./lib/helpers.js')
+  , helper = require('./helpers.js')
   , log = helper.log
   , format = helper.format
   , url = argv.url;
