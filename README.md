@@ -32,17 +32,12 @@ For example:
 }
 ```
 
-`databaseUrl`: the connection string should follow the format described in [the mongo connection string docs](http://docs.mongodb.org/manual/reference/connection-string).
-
-`outDir`: the target path where data should be written (defaults to *./out*).
-
-`logLevel`: the debug level to set for the internal logger (defaults to *./info*).
-
-`gitEnabled`: if set to *true*, commit changes to a repository and then attempt to push those changes to the **origin** remote (defaults to *false*).
-
-`gitAuthor`: the name to use as the commit author if pushing to Git (defaults to *MongoBot*).
-
-`gitAuthorEmail`: the email address to associate with the *gitAuthor* (defaults to *./info*).
+* `databaseUrl`: the connection string should follow the format described in [the mongo connection string docs](http://docs.mongodb.org/manual/reference/connection-string).
+* `outDir`: the target path where data should be written (defaults to *./out*).
+* `logLevel`: the debug level to set for the internal logger (defaults to *./info*).
+* `gitEnabled`: if set to *true*, commit changes to a repository and then attempt to push those changes to the **origin** remote (defaults to *false*).
+* `gitAuthor`: the name to use as the commit author if pushing to Git (defaults to *MongoBot*).
+* `gitAuthorEmail`: the email address to associate with the *gitAuthor* (defaults to *./info*).
 
 ### Git Integration
 
