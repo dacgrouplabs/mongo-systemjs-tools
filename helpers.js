@@ -30,7 +30,10 @@ function writeOplogEntryToDisk(doc) {
   var funcName = doc.o._id;
   var fn = format("%s.%s.js", db, funcName);
 
-  writeFile(fn, doc.o.value.code);
+  if (doc != null && doc.o != null && doc.o.value != null)
+    writeFile(fn, doc.o.value.code);
+  else
+    log.warn("[writeOplogEntryToDisk] no code block for doc: " + doc);
 
   if (config.gitEnabled) {
     checkinFile(fn);
