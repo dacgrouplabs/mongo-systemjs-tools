@@ -120,5 +120,5 @@ THE SOFTWARE.
 [npm-url]: https://npmjs.org/package/mongo-systemjs-tools
 [travis-image]: https://travis-ci.org/cleydson/mongo-systemjs-tools.svg?branch=master
 [travis-url]: https://travis-ci.org/cleydson/mongo-systemjs-tools
-[daviddm-image]: https://david-dm.org/dacgrouplabs/mongo-systemjs-tools.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/dacgrouplabs/mongo-systemjs-tools
+[daviddm-image]: https://david-dm.org/cleydson/mongo-systemjs-tools.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/cleydson/mongo-systemjs-tools
