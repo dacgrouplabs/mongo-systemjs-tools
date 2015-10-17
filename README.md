@@ -1,9 +1,6 @@
 # mongo-systemjs-tools [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 >
 
-
-# mongo-systemjs-tools
-
 This package is a collection of utilities that can be used to manage the internal functions stored withing a database's `system.js` collection.
 
 **NOTE** In order to use the Git integration, you'll have to use Node.js 0.12.1 or later. If not, you'll be greeted by the following when you try to run the tools:
