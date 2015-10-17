@@ -16,7 +16,7 @@ Error: /path/to/mongo-systemjs-tools/node_modules/nodegit/build/Release/nodegit.
 
 ## Install
 
-xxx
+TODO
 ```sh
 $ npm install --save mongo-systemjs-tools
 ```
@@ -24,14 +24,14 @@ $ npm install --save mongo-systemjs-tools
 First, you'll need to have [Node.js](https://nodejs.org/) installed. We recommend using [nvm](https://github.com/creationix/nvm) for this, as it greatly simplifies managing node versions.
 
 ```
-git checkout https://github.com/dacgrouplabs/mongo-systemjs-tools
+git checkout https://github.com/cleydson/mongo-systemjs-tools
 cd mongo-systemjs-tools
 npm install
 ```
 
 ## Usage
 
-xxx
+TODO
 ```js
 var mongoSystemjsTools = require('mongo-systemjs-tools');
 
@@ -126,7 +126,7 @@ THE SOFTWARE.
 
 [npm-image]: https://badge.fury.io/js/mongo-systemjs-tools.svg
 [npm-url]: https://npmjs.org/package/mongo-systemjs-tools
-[travis-image]: https://travis-ci.org/dacgrouplabs/mongo-systemjs-tools.svg?branch=master
-[travis-url]: https://travis-ci.org/dacgrouplabs/mongo-systemjs-tools
+[travis-image]: https://travis-ci.org/cleydson/mongo-systemjs-tools.svg?branch=master
+[travis-url]: https://travis-ci.org/cleydson/mongo-systemjs-tools
 [daviddm-image]: https://david-dm.org/dacgrouplabs/mongo-systemjs-tools.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/dacgrouplabs/mongo-systemjs-tools
