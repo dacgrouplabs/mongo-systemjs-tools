@@ -13,27 +13,22 @@ Error: /path/to/mongo-systemjs-tools/node_modules/nodegit/build/Release/nodegit.
 
 ## Install
 
-TODO
+First, you'll need to have [Node.js](https://nodejs.org/) installed. We recommend using [nvm](https://github.com/creationix/nvm) for this, as it greatly simplifies managing node versions.
+
+
 ```sh
 $ npm install --save mongo-systemjs-tools
 ```
 
-First, you'll need to have [Node.js](https://nodejs.org/) installed. We recommend using [nvm](https://github.com/creationix/nvm) for this, as it greatly simplifies managing node versions.
+Or,
 
 ```
-git checkout https://github.com/cleydson/mongo-systemjs-tools
+git checkout https://github.com/dacgroup/mongo-systemjs-tools
 cd mongo-systemjs-tools
 npm install
 ```
 
 ## Usage
-
-TODO
-```js
-var mongoSystemjsTools = require('mongo-systemjs-tools');
-
-mongoSystemjsTools('Rainbow');
-```
 
 ## systemjs-dump
 
