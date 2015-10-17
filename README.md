@@ -1,4 +1,5 @@
-# mongo-systemjs-tools [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# mongo-systemjs-tools 
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 >
 
 This package is a collection of utilities that can be used to manage the internal functions stored withing a database's `system.js` collection.
