@@ -1,7 +1,0 @@
-{
-    "databaseUrl" : "mongodb://username:password@serverip:port/database?options",
-    "outDir": "/path/to/data",
-    "gitEnabled": false,
-    "gitAuthor": "MongoBot",
-    "gitAuthorEmail": ""
-}

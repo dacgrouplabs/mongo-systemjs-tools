@@ -1,4 +1,7 @@
+node_modules
+coverage
 out/
 node_modules/
 config.json
 *.log
+.DS_Store

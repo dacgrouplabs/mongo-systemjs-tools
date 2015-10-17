@@ -1,3 +1,7 @@
+# mongo-systemjs-tools [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+>
+
+
 # mongo-systemjs-tools
 
 This package is a collection of utilities that can be used to manage the internal functions stored withing a database's `system.js` collection.
@@ -10,7 +14,12 @@ Error: /path/to/mongo-systemjs-tools/node_modules/nodegit/build/Release/nodegit.
     at Function.Module._load (module.js:312:12)
 ```
 
-**Installation**
+## Install
+
+xxx
+```sh
+$ npm install --save mongo-systemjs-tools
+```
 
 First, you'll need to have [Node.js](https://nodejs.org/) installed. We recommend using [nvm](https://github.com/creationix/nvm) for this, as it greatly simplifies managing node versions.
 
@@ -18,6 +27,15 @@ First, you'll need to have [Node.js](https://nodejs.org/) installed. We recommen
 git checkout https://github.com/dacgrouplabs/mongo-systemjs-tools
 cd mongo-systemjs-tools
 npm install
+```
+
+## Usage
+
+xxx
+```js
+var mongoSystemjsTools = require('mongo-systemjs-tools');
+
+mongoSystemjsTools('Rainbow');
 ```
 
 ## systemjs-dump
@@ -78,7 +96,7 @@ git remote add origin <remote url>
 - [ ] Add a lot more error handling
 - [ ] Allow Git initialization of data directory (so user doesn't have to do it manually)
 - [ ] Extract Git functionality so it can be used with *systemjs-dump* as well
-- [ ] Add hooks to allow external integration (ex: [mongo-linter](https://github.com/dacgrouplabs/mongo-linter)) 
+- [ ] Add hooks to allow external integration (ex: [mongo-linter](https://github.com/dacgrouplabs/mongo-linter))
 - [ ] Add tests!
 
 ## LICENSE
@@ -105,3 +123,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
+
+[npm-image]: https://badge.fury.io/js/mongo-systemjs-tools.svg
+[npm-url]: https://npmjs.org/package/mongo-systemjs-tools
+[travis-image]: https://travis-ci.org/dacgrouplabs/mongo-systemjs-tools.svg?branch=master
+[travis-url]: https://travis-ci.org/dacgrouplabs/mongo-systemjs-tools
+[daviddm-image]: https://david-dm.org/dacgrouplabs/mongo-systemjs-tools.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/dacgrouplabs/mongo-systemjs-tools
