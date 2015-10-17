@@ -22,10 +22,10 @@ $ npm install --save mongo-systemjs-tools
 
 Or,
 
-```
-git checkout https://github.com/dacgroup/mongo-systemjs-tools
-cd mongo-systemjs-tools
-npm install
+```sh
+$ git checkout https://github.com/dacgroup/mongo-systemjs-tools
+$ cd mongo-systemjs-tools
+$ npm install
 ```
 
 ## Usage
@@ -34,8 +34,8 @@ npm install
 
 This utility is used to dump all *system.js* functions to file for a specific database.
 
-```
-node systemjs-dump.js --url <mongouri>
+```sh
+$ node systemjs-dump.js --url <mongouri>
 ```
 
 ## systemjs-monitor
@@ -71,16 +71,16 @@ For example:
 
 If the `gitEnabled` option is set, the `outDir` can be Git-enabled by setting up a local repo.
 
-```
-cd /path/to/outDir
-git init
+```sh
+$ cd /path/to/outDir
+$ git init
 ```
 
 If you would like **systemjs-monitor** to push updates to a remote server (ex: [GitHub](https://github.com), [Bitbucket](https://bitbucket.com)), a [remote](http://git-scm.com/docs/git-remote) would need to be defined.
 
-```
-cd /path/to/outDir
-git remote add origin <remote url>
+```sh
+$ cd /path/to/outDir
+$ git remote add origin <remote url>
 ```
 
 ## TODO
