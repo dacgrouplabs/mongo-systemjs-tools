@@ -1,4 +1,6 @@
-# mongo-systemjs-tools
+# mongo-systemjs-tools 
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+>
 
 This package is a collection of utilities that can be used to manage the internal functions stored withing a database's `system.js` collection.
 
@@ -10,22 +12,31 @@ Error: /path/to/mongo-systemjs-tools/node_modules/nodegit/build/Release/nodegit.
     at Function.Module._load (module.js:312:12)
 ```
 
-**Installation**
+## Install
 
 First, you'll need to have [Node.js](https://nodejs.org/) installed. We recommend using [nvm](https://github.com/creationix/nvm) for this, as it greatly simplifies managing node versions.
 
+
+```sh
+$ npm install --save mongo-systemjs-tools
 ```
-git checkout https://github.com/dacgrouplabs/mongo-systemjs-tools
-cd mongo-systemjs-tools
-npm install
+
+Or,
+
+```sh
+$ git checkout https://github.com/dacgroup/mongo-systemjs-tools
+$ cd mongo-systemjs-tools
+$ npm install
 ```
+
+## Usage
 
 ## systemjs-dump
 
 This utility is used to dump all *system.js* functions to file for a specific database.
 
-```
-node systemjs-dump.js --url <mongouri>
+```sh
+$ node systemjs-dump.js --url <mongouri>
 ```
 
 ## systemjs-monitor
@@ -61,16 +72,16 @@ For example:
 
 If the `gitEnabled` option is set, the `outDir` can be Git-enabled by setting up a local repo.
 
-```
-cd /path/to/outDir
-git init
+```sh
+$ cd /path/to/outDir
+$ git init
 ```
 
 If you would like **systemjs-monitor** to push updates to a remote server (ex: [GitHub](https://github.com), [Bitbucket](https://bitbucket.com)), a [remote](http://git-scm.com/docs/git-remote) would need to be defined.
 
-```
-cd /path/to/outDir
-git remote add origin <remote url>
+```sh
+$ cd /path/to/outDir
+$ git remote add origin <remote url>
 ```
 
 ## TODO
@@ -78,7 +89,7 @@ git remote add origin <remote url>
 - [ ] Add a lot more error handling
 - [ ] Allow Git initialization of data directory (so user doesn't have to do it manually)
 - [ ] Extract Git functionality so it can be used with *systemjs-dump* as well
-- [ ] Add hooks to allow external integration (ex: [mongo-linter](https://github.com/dacgrouplabs/mongo-linter)) 
+- [ ] Add hooks to allow external integration (ex: [mongo-linter](https://github.com/dacgrouplabs/mongo-linter))
 - [ ] Add tests!
 
 ## LICENSE
@@ -105,3 +116,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
+
+[npm-image]: https://badge.fury.io/js/mongo-systemjs-tools.svg
+[npm-url]: https://npmjs.org/package/mongo-systemjs-tools
+[travis-image]: https://travis-ci.org/cleydson/mongo-systemjs-tools.svg?branch=master
+[travis-url]: https://travis-ci.org/cleydson/mongo-systemjs-tools
+[daviddm-image]: https://david-dm.org/cleydson/mongo-systemjs-tools.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/cleydson/mongo-systemjs-tools
